@@ -15,15 +15,16 @@
   </li>
 </ul>
 <!--
-  Display the selected hero details if the selectedHero exists
-  - when selectedHero is undefined the ngIf removes the hero detail from the DOM
-  - when the user picks a hero, selectedHero has a value and ngIf puts the hero detail into the DOM
+    HeroDetailComponent selector is app-hero-detail
+    Add app-hero-detail element
+    Bind the HeroesComponent.selectedHero to the element's hero property
+    - [hero]="selectedHero" - is an Angular property binding
+      - its a one way binding from teh selectedHero propery of the HeroesComponent
+        to the hero property of the target element which maps to the hero property
+        of the HeroDetailComponent
+    - Now when user clicks a hero in the list
+      - selectedHero changes
+        - causes the property binding to update hero
+        HeroDetailComponent
 -->
-<div *ngIf="selectedHero">
-  <h2>{{selectedHero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedHero.id}}</div>
-  <div>
-    <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
-  </div>
-</div>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>

@@ -17,12 +17,11 @@ import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
-  // declarations array
   declarations: [
     AppComponent,
     HeroesComponent
   ],
-  imports: [ // imports module contains list of external modules @NgModule releies  on.
+  imports: [
     BrowserModule,
     FormsModule
   ],

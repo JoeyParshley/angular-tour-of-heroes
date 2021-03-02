@@ -1,0 +1,11 @@
+<!-- HeroesComponent template bound to here's name -->
+<h2>{{hero.name | uppercase}} Details</h2>
+<div>
+  <label for='name'>Hero name: </label>
+  <!--
+    [(ngModel)] is Angular's two-way binding syntax
+    - here is binds the hero.name property to the HTML textbox so that data can flow in both directions
+      from the hero.name property top the textbox and back
+  -->
+  <input id='name' [(ngModel)]="hero.name" placeholder="name">
+</div>
